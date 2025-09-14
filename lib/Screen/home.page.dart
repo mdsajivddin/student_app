@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_app/Screen/customeDrawer.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -306,91 +307,91 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 25.h),
-            // Container(
-            //   height: MediaQuery.of(context).size.height,
-            //   child: LineChart(
-            //     LineChartData(
-            //       minX: 0,
-            //       maxX: 5,
-            //       minY: 0,
-            //       maxY: 100,
-            //       gridData: FlGridData(show: false),
-            //       borderData: FlBorderData(show: false),
-            //       titlesData: FlTitlesData(
-            //         leftTitles: AxisTitles(
-            //           sideTitles: SideTitles(
-            //             showTitles: true,
-            //             reservedSize: 35,
-            //           ),
-            //         ),
-            //         bottomTitles: AxisTitles(
-            //           sideTitles: SideTitles(
-            //             showTitles: true,
-            //             interval: 1,
-            //             getTitlesWidget: (value, meta) {
-            //               switch (value.toInt()) {
-            //                 case 0:
-            //                   return const Text(
-            //                     "Apr10",
-            //                     style: TextStyle(color: Colors.white70),
-            //                   );
-            //                 case 1:
-            //                   return const Text(
-            //                     "Apr11",
-            //                     style: TextStyle(color: Colors.white70),
-            //                   );
-            //                 case 2:
-            //                   return const Text(
-            //                     "Apr12",
-            //                     style: TextStyle(color: Colors.white70),
-            //                   );
-            //                 case 3:
-            //                   return const Text(
-            //                     "Apr13",
-            //                     style: TextStyle(color: Colors.white70),
-            //                   );
-            //                 // case 4:
-            //                 //   return const Text(
-            //                 //     "Apr14",
-            //                 //     style: TextStyle(color: Colors.white70),
-            //                 //   );
-            //               }
-            //               return const Text("");
-            //             },
-            //           ),
-            //         ),
-            //         rightTitles: AxisTitles(
-            //           sideTitles: SideTitles(showTitles: false),
-            //         ),
-            //         topTitles: AxisTitles(
-            //           sideTitles: SideTitles(showTitles: false),
-            //         ),
-            //       ),
-            //       lineBarsData: [
-            //         LineChartBarData(
-            //           isCurved: true,
-            //           color: Colors.amber,
-            //           barWidth: 3,
-            //           belowBarData: BarAreaData(
-            //             show: true,
-            //             color: Colors.amber.withOpacity(0.2),
-            //           ),
-            //           dotData: FlDotData(show: true),
-            //           spots: const [
-            //             FlSpot(0, 60),
-            //             FlSpot(0.7, 30),
-            //             FlSpot(1.3, 65),
-            //             FlSpot(2, 80),
-            //             FlSpot(2.5, 60),
-            //             FlSpot(3, 70),
-            //             FlSpot(3.5, 90),
-            //             FlSpot(4, 75),
-            //           ],
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-            // ),
+            Container(
+              height: MediaQuery.of(context).size.height,
+              child: LineChart(
+                LineChartData(
+                  minX: 0,
+                  maxX: 5,
+                  minY: 0,
+                  maxY: 100,
+                  gridData: FlGridData(show: false),
+                  borderData: FlBorderData(show: false),
+                  titlesData: FlTitlesData(
+                    leftTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        reservedSize: 35,
+                      ),
+                    ),
+                    bottomTitles: AxisTitles(
+                      sideTitles: SideTitles(
+                        showTitles: true,
+                        interval: 1,
+                        getTitlesWidget: (value, meta) {
+                          switch (value.toInt()) {
+                            case 0:
+                              return const Text(
+                                "Apr10",
+                                style: TextStyle(color: Colors.white70),
+                              );
+                            case 1:
+                              return const Text(
+                                "Apr11",
+                                style: TextStyle(color: Colors.white70),
+                              );
+                            case 2:
+                              return const Text(
+                                "Apr12",
+                                style: TextStyle(color: Colors.white70),
+                              );
+                            case 3:
+                              return const Text(
+                                "Apr13",
+                                style: TextStyle(color: Colors.white70),
+                              );
+                            // case 4:
+                            //   return const Text(
+                            //     "Apr14",
+                            //     style: TextStyle(color: Colors.white70),
+                            //   );
+                          }
+                          return const Text("");
+                        },
+                      ),
+                    ),
+                    rightTitles: AxisTitles(
+                      sideTitles: SideTitles(showTitles: false),
+                    ),
+                    topTitles: AxisTitles(
+                      sideTitles: SideTitles(showTitles: false),
+                    ),
+                  ),
+                  lineBarsData: [
+                    LineChartBarData(
+                      isCurved: true,
+                      color: Colors.amber,
+                      barWidth: 3,
+                      belowBarData: BarAreaData(
+                        show: true,
+                        color: Colors.amber.withOpacity(0.2),
+                      ),
+                      dotData: FlDotData(show: true),
+                      spots: const [
+                        FlSpot(0, 60),
+                        FlSpot(0.7, 30),
+                        FlSpot(1.3, 65),
+                        FlSpot(2, 80),
+                        FlSpot(2.5, 60),
+                        FlSpot(3, 70),
+                        FlSpot(3.5, 90),
+                        FlSpot(4, 75),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
             SizedBox(height: 30.h),
             Row(
               children: [

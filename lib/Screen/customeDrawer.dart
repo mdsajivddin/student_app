@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:student_app/Screen/addStudent.page.dart';
 import 'package:student_app/Screen/chat.inbox.page.dart';
 import 'package:student_app/Screen/fees.page.dart';
+import 'package:student_app/Screen/teacherHome.page.dart';
 import 'package:student_app/Screen/time.page.dart';
 
 class Customedrawer extends StatefulWidget {
@@ -85,7 +86,14 @@ class _CustomedrawerState extends State<Customedrawer> {
                     callBack: () {},
                   ),
                   SizedBox(height: 25.h),
-                  buildMethod("assets/teacher.png", "Teacher", () {}),
+                  buildMethod("assets/teacher.png", "Teacher", () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => TeacherHomePage(),
+                      ),
+                    );
+                  }),
                   SizedBox(height: 25.h),
                   buildMethod("assets/free.png", "Fees", () {
                     Navigator.push(
