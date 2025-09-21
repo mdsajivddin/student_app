@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_app/Screen/addStudent.page.dart';
 import 'package:student_app/Screen/chat.inbox.page.dart';
+import 'package:student_app/Screen/examManagement.page.dart';
 import 'package:student_app/Screen/fees.page.dart';
 import 'package:student_app/Screen/teacherHome.page.dart';
 import 'package:student_app/Screen/time.page.dart';
@@ -147,7 +148,14 @@ class _CustomedrawerState extends State<Customedrawer> {
                   SizedBox(height: 25.h),
                   buildMethod("assets/exam.png", "Exam & Result", () {}),
                   SizedBox(height: 25.h),
-                  buildMethod("assets/exam.png", "Exam Managment", () {}),
+                  buildMethod("assets/exam.png", "Exam Managment", () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => ExamManagementPage(),
+                      ),
+                    );
+                  }),
                   SizedBox(height: 25.h),
                   buildMethod("assets/holiday.png", "Holiday", () {}),
                   SizedBox(height: 25.h),

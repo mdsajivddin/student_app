@@ -307,88 +307,232 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             SizedBox(height: 25.h),
-            Container(
-              height: MediaQuery.of(context).size.height,
-              child: LineChart(
-                LineChartData(
-                  minX: 0,
-                  maxX: 5,
-                  minY: 0,
-                  maxY: 100,
-                  gridData: FlGridData(show: false),
-                  borderData: FlBorderData(show: false),
-                  titlesData: FlTitlesData(
-                    leftTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        reservedSize: 35,
+            // Container(
+            //   height: MediaQuery.of(context).size.height,
+            //   child: LineChart(
+            //     LineChartData(
+            //       minX: 0,
+            //       maxX: 5,
+            //       minY: 0,
+            //       maxY: 100,
+            //       gridData: FlGridData(show: false),
+            //       borderData: FlBorderData(show: false),
+            //       titlesData: FlTitlesData(
+            //         leftTitles: AxisTitles(
+            //           sideTitles: SideTitles(
+            //             showTitles: true,
+            //             reservedSize: 35,
+            //           ),
+            //         ),
+            //         bottomTitles: AxisTitles(
+            //           sideTitles: SideTitles(
+            //             showTitles: true,
+            //             interval: 1,
+            //             getTitlesWidget: (value, meta) {
+            //               switch (value.toInt()) {
+            //                 case 0:
+            //                   return const Text(
+            //                     "Apr10",
+            //                     style: TextStyle(color: Colors.white70),
+            //                   );
+            //                 case 1:
+            //                   return const Text(
+            //                     "Apr11",
+            //                     style: TextStyle(color: Colors.white70),
+            //                   );
+            //                 case 2:
+            //                   return const Text(
+            //                     "Apr12",
+            //                     style: TextStyle(color: Colors.white70),
+            //                   );
+            //                 case 3:
+            //                   return const Text(
+            //                     "Apr13",
+            //                     style: TextStyle(color: Colors.white70),
+            //                   );
+            //                 // case 4:
+            //                 //   return const Text(
+            //                 //     "Apr14",
+            //                 //     style: TextStyle(color: Colors.white70),
+            //                 //   );
+            //               }
+            //               return const Text("");
+            //             },
+            //           ),
+            //         ),
+            //         rightTitles: AxisTitles(
+            //           sideTitles: SideTitles(showTitles: false),
+            //         ),
+            //         topTitles: AxisTitles(
+            //           sideTitles: SideTitles(showTitles: false),
+            //         ),
+            //       ),
+            //       lineBarsData: [
+            //         LineChartBarData(
+            //           isCurved: true,
+            //           color: Colors.amber,
+            //           barWidth: 3,
+            //           belowBarData: BarAreaData(
+            //             show: true,
+            //             color: Colors.amber.withOpacity(0.2),
+            //           ),
+            //           dotData: FlDotData(show: true),
+            //           spots: const [
+            //             FlSpot(0, 60),
+            //             FlSpot(0.7, 30),
+            //             FlSpot(1.3, 65),
+            //             FlSpot(2, 80),
+            //             FlSpot(2.5, 60),
+            //             FlSpot(3, 70),
+            //             FlSpot(3.5, 90),
+            //             FlSpot(4, 75),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
+            Center(
+              child: SizedBox(
+                height: 400,
+                child: LineChart(
+                  LineChartData(
+                    gridData: FlGridData(show: false),
+                    titlesData: FlTitlesData(
+                      leftTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          reservedSize: 30,
+                          interval: 25,
+                          getTitlesWidget: (value, meta) {
+                            if (value == 0 ||
+                                value == 25 ||
+                                value == 50 ||
+                                value == 75 ||
+                                value == 100) {
+                              return Text(
+                                value.toInt().toString(),
+                                style: const TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 12,
+                                ),
+                              );
+                            }
+                            return const SizedBox();
+                          },
+                        ),
+                      ),
+                      bottomTitles: AxisTitles(
+                        sideTitles: SideTitles(
+                          showTitles: true,
+                          interval: 1,
+                          getTitlesWidget: (value, meta) {
+                            switch (value.toInt()) {
+                              case 0:
+                                return const Text(
+                                  "Apr10",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                );
+                              case 1:
+                                return const Text(
+                                  "Apr11",
+                                  style: TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 12,
+                                  ),
+                                );
+                              case 2:
+                                return const Text(
+                                  "Apr12",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                );
+                              case 3:
+                                return const Text(
+                                  "Apr13",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                );
+                              case 4:
+                                return const Text(
+                                  "Apr14",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 12,
+                                  ),
+                                );
+                            }
+                            return const SizedBox();
+                          },
+                        ),
+                      ),
+                      rightTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
+                      ),
+                      topTitles: const AxisTitles(
+                        sideTitles: SideTitles(showTitles: false),
                       ),
                     ),
-                    bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        interval: 1,
-                        getTitlesWidget: (value, meta) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return const Text(
-                                "Apr10",
-                                style: TextStyle(color: Colors.white70),
-                              );
-                            case 1:
-                              return const Text(
-                                "Apr11",
-                                style: TextStyle(color: Colors.white70),
-                              );
-                            case 2:
-                              return const Text(
-                                "Apr12",
-                                style: TextStyle(color: Colors.white70),
-                              );
-                            case 3:
-                              return const Text(
-                                "Apr13",
-                                style: TextStyle(color: Colors.white70),
-                              );
-                            // case 4:
-                            //   return const Text(
-                            //     "Apr14",
-                            //     style: TextStyle(color: Colors.white70),
-                            //   );
-                          }
-                          return const Text("");
+                    borderData: FlBorderData(show: false),
+                    minX: 0,
+                    maxX: 4,
+                    minY: 0,
+                    maxY: 100,
+                    lineBarsData: [
+                      LineChartBarData(
+                        spots: const [
+                          FlSpot(0, 60),
+                          FlSpot(0.5, 40),
+                          FlSpot(1, 70),
+                          FlSpot(1.5, 50),
+                          FlSpot(2, 80),
+                          FlSpot(2.5, 60),
+                          FlSpot(3, 70),
+                          FlSpot(3.5, 90),
+                          FlSpot(4, 75),
+                        ],
+                        isCurved: true,
+                        color: Colors.amber,
+                        barWidth: 3,
+                        isStrokeCapRound: true,
+                        dotData: FlDotData(show: false),
+                        belowBarData: BarAreaData(
+                          show: true,
+                          gradient: LinearGradient(
+                            colors: [
+                              Colors.yellow.withOpacity(0.4),
+                              Colors.transparent,
+                            ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
+                        ),
+                      ),
+                    ],
+                    lineTouchData: LineTouchData(
+                      touchTooltipData: LineTouchTooltipData(
+                        //tooltipBgColor: Colors.white,
+                        getTooltipItems: (touchedSpots) {
+                          return touchedSpots.map((spot) {
+                            return LineTooltipItem(
+                              "${spot.y.toInt()}%",
+                              const TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            );
+                          }).toList();
                         },
                       ),
                     ),
-                    rightTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: false),
-                    ),
-                    topTitles: AxisTitles(
-                      sideTitles: SideTitles(showTitles: false),
-                    ),
                   ),
-                  lineBarsData: [
-                    LineChartBarData(
-                      isCurved: true,
-                      color: Colors.amber,
-                      barWidth: 3,
-                      belowBarData: BarAreaData(
-                        show: true,
-                        color: Colors.amber.withOpacity(0.2),
-                      ),
-                      dotData: FlDotData(show: true),
-                      spots: const [
-                        FlSpot(0, 60),
-                        FlSpot(0.7, 30),
-                        FlSpot(1.3, 65),
-                        FlSpot(2, 80),
-                        FlSpot(2.5, 60),
-                        FlSpot(3, 70),
-                        FlSpot(3.5, 90),
-                        FlSpot(4, 75),
-                      ],
-                    ),
-                  ],
                 ),
               ),
             ),
