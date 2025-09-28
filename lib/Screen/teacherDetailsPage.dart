@@ -39,20 +39,16 @@ class _TeacherDetailsPageState extends State<TeacherDetailsPage> {
                   left: 0,
                   right: 0,
                   child: Container(
-                    width: 50.w,
-                    height: 55.h,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      border: Border.all(color: Colors.white, width: 5.w),
-                    ),
+                    width: 60.w,
+                    height: 60.w, // same width/height for perfect circle
+                    decoration: BoxDecoration(shape: BoxShape.circle),
                     child: Center(
                       child: ClipOval(
                         child: Image.asset(
                           "assets/t4.png",
-                          width: 50.w,
-                          height: 55.h,
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover, // image full circle cover karega
+                          width: 60.w,
+                          height: 60.w,
                         ),
                       ),
                     ),
@@ -60,7 +56,7 @@ class _TeacherDetailsPageState extends State<TeacherDetailsPage> {
                 ),
                 Positioned(
                   left: 10.w,
-                  top: 10.h,
+                  top: 20.h,
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -70,7 +66,7 @@ class _TeacherDetailsPageState extends State<TeacherDetailsPage> {
                 ),
               ],
             ),
-            SizedBox(height: 20.h),
+            SizedBox(height: 30.h),
             Center(
               child: Text(
                 "Robert Fox",
@@ -191,7 +187,12 @@ class _TeacherDetailsPageState extends State<TeacherDetailsPage> {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(top: 15.h,left: 17.w,right: 17.w),
+              margin: EdgeInsets.only(
+                top: 17.h,
+                left: 17.w,
+                right: 17.w,
+                bottom: 10.h,
+              ),
               padding: EdgeInsets.only(
                 top: 30.h,
                 right: 30.w,

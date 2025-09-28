@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_app/Screen/addStudent.page.dart';
 import 'package:student_app/Screen/chat.inbox.page.dart';
+import 'package:student_app/Screen/exam.managementList.page.dart';
 import 'package:student_app/Screen/examManagement.page.dart';
 import 'package:student_app/Screen/fees.page.dart';
 import 'package:student_app/Screen/teacherHome.page.dart';
@@ -26,7 +27,7 @@ class _CustomedrawerState extends State<Customedrawer> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 60.h),
+          SizedBox(height: 50.h),
           Row(
             children: [
               SizedBox(width: 20.h),
@@ -140,13 +141,20 @@ class _CustomedrawerState extends State<Customedrawer> {
                       Navigator.push(
                         context,
                         CupertinoPageRoute(
-                          builder: (context) => ChatInboxPage(),
+                          builder: (context) => ExamManagementListPage(),
                         ),
                       );
                     },
                   ),
                   SizedBox(height: 25.h),
-                  buildMethod("assets/exam.png", "Exam & Result", () {}),
+                  buildMethod("assets/exam.png", "Exam & Result", () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => ExamManagementListPage(),
+                      ),
+                    );
+                  }),
                   SizedBox(height: 25.h),
                   buildMethod("assets/exam.png", "Exam Managment", () {
                     Navigator.push(

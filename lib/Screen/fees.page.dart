@@ -19,10 +19,12 @@ class _FeesPageState extends State<FeesPage> {
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
         backgroundColor: Color(0xFFFFFFFF),
-        leading: IconButton(
-          style: IconButton.styleFrom(padding: EdgeInsets.only(left: 15.w)),
-          onPressed: () {},
-          icon: Icon(Icons.menu, color: Color(0xFF000000), size: 25.sp),
+        leading: Padding(
+          padding: EdgeInsets.only(left: 12.w),
+          child: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu, color: Color(0xFF000000), size: 25.sp),
+          ),
         ),
         title: Text(
           "Fees",
