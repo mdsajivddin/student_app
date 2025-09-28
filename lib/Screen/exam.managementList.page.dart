@@ -42,8 +42,8 @@ class _ExamManagementListPageState extends State<ExamManagementListPage> {
             padding: EdgeInsets.only(
               left: 16.w,
               right: 16.w,
-              top: 6.h,
-              bottom: 6.h,
+              top: 10.h,
+              bottom: 10.h,
             ),
             decoration: BoxDecoration(color: Color(0xFF0F2169)),
             child: Row(

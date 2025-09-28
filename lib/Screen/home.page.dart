@@ -392,7 +392,8 @@ class _HomePageState extends State<HomePage> {
             //     ),
             //   ),
             // ),
-            Center(
+            Padding(
+              padding: EdgeInsets.only(left: 35.w, right: 35.w),
               child: SizedBox(
                 height: 400,
                 child: LineChart(
@@ -402,7 +403,7 @@ class _HomePageState extends State<HomePage> {
                       leftTitles: AxisTitles(
                         sideTitles: SideTitles(
                           showTitles: true,
-                          reservedSize: 30,
+                          reservedSize: 30.w,
                           interval: 25,
                           getTitlesWidget: (value, meta) {
                             if (value == 0 ||
@@ -412,13 +413,14 @@ class _HomePageState extends State<HomePage> {
                                 value == 100) {
                               return Text(
                                 value.toInt().toString(),
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 12,
+                                style: GoogleFonts.inter(
+                                  color: Color(0xFF444444),
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w400,
                                 ),
                               );
                             }
-                            return const SizedBox();
+                            return SizedBox();
                           },
                         ),
                       ),
@@ -429,43 +431,48 @@ class _HomePageState extends State<HomePage> {
                           getTitlesWidget: (value, meta) {
                             switch (value.toInt()) {
                               case 0:
-                                return const Text(
+                                return Text(
                                   "Apr10",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF444444),
                                   ),
                                 );
                               case 1:
-                                return const Text(
+                                return Text(
                                   "Apr11",
-                                  style: TextStyle(
-                                    color: Colors.white70,
-                                    fontSize: 12,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF444444),
                                   ),
                                 );
                               case 2:
-                                return const Text(
+                                return Text(
                                   "Apr12",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF444444),
                                   ),
                                 );
                               case 3:
-                                return const Text(
+                                return Text(
                                   "Apr13",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF444444),
                                   ),
                                 );
                               case 4:
-                                return const Text(
+                                return Text(
                                   "Apr14",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
+                                  style: GoogleFonts.inter(
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color(0xFF444444),
                                   ),
                                 );
                             }
@@ -473,10 +480,10 @@ class _HomePageState extends State<HomePage> {
                           },
                         ),
                       ),
-                      rightTitles: const AxisTitles(
+                      rightTitles: AxisTitles(
                         sideTitles: SideTitles(showTitles: false),
                       ),
-                      topTitles: const AxisTitles(
+                      topTitles: AxisTitles(
                         sideTitles: SideTitles(showTitles: false),
                       ),
                     ),
@@ -487,7 +494,7 @@ class _HomePageState extends State<HomePage> {
                     maxY: 100,
                     lineBarsData: [
                       LineChartBarData(
-                        spots: const [
+                        spots: [
                           FlSpot(0, 60),
                           FlSpot(0.5, 40),
                           FlSpot(1, 70),
@@ -524,7 +531,7 @@ class _HomePageState extends State<HomePage> {
                             return LineTooltipItem(
                               "${spot.y.toInt()}%",
                               const TextStyle(
-                                color: Colors.black,
+                                color: Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
                             );
